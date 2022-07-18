@@ -12,17 +12,17 @@ const CountrersList = () => {
 
   const [counters, setCounters] = useState(initialState);
   const handleIncrement = (id) => {
-    console.log("handleIncrement", id);
-    setValue = (prevValue) => prevValue + 1;
-    // const newCounters = counters.map((counter) => {
-    //   if (counter.id === id) {
-    //     counter.value += 1;
-    //   }
-
-    // setCounters(newCounters);
+    const index = counters.findIndex((item) => item.id === id);
+    const newArray = [...counters];
+    newArray[index].value++;
+    setCounters(newArray);
   };
-  const handleDecrement = () => {
-    return counters.value - 1;
+
+  const handleDecrement = (id) => {
+    const index = counters.findIndex((item) => item.id === id);
+    const newArray = [...counters];
+    newArray[index].value--;
+    setCounters(newArray);
   };
 
   const handleDelete = (id) => {

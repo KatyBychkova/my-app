@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Counter = (props) => {
-  const [value, setValue] = useState(props.value);
+  const { value } = props;
 
   const formatValue = () => {
     return value === 0 ? "empty" : value;
@@ -11,13 +11,6 @@ const Counter = (props) => {
     classes += value === 0 ? "bg-warning" : "bg-primary";
     return classes;
   };
-
-  // const handleIncrement = () => {
-  //   setValue((prevState) => prevState + 1); //? откуда реакт берет значение prevState. оно записано в переменную? зачем тогда в колбек его передавать
-  // };
-  // const handleDecrement = () => {
-  //   setValue((prevState) => prevState - 1);
-  // };
 
   return (
     <div>
