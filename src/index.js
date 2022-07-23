@@ -1,11 +1,9 @@
-import React from 'react';
-import reactDOM from 'react-dom';
-import "bootstrap/dist/css/bootstrap.css"; // Подключение Bootstrap из папки node_modules
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "bootstrap/dist/css/bootstrap.css";
 import App from "./app";
 
-
-reactDOM.render(<App />, document.getElementById('root'));  // почему App без ()?
-
-
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
 
 
